@@ -17,6 +17,59 @@ const useCmd = () => {
     }
   }, [terminalLines]);
 
+  // Initialize welcome
+  useEffect(() => {
+    const welcome = [
+      "Welcome to Synsa Creative Portfolio Terminal",
+      "Starting system...",
+      "Ready! 🚀",
+    ];
+
+    let lineIndex = 0;
+    // const showNextLine = () => { //using timeout
+    //   if (lineIndex < welcome.length) {
+    //     setTerminalLines((prev) => [
+    //       ...prev,
+    //       {
+    //         type: "system",
+    //         content: welcome[lineIndex],
+    //         times: new Date().toLocaleTimeString(),
+    //       },
+    //     ]);
+    //     lineIndex++;
+    //     setTimeout(showNextLine, 800);
+    //   }
+    // };
+    // setTimeout(showNextLine, 500);
+
+    const showNextLine = setInterval(() => {
+      //using setinterval
+      if (lineIndex < welcome.length) {
+        setTerminalLines((pre) => [
+          ...pre,
+          {
+            type: "system",
+            content: welcome[lineIndex],
+            times: new Date().toLocaleTimeString(),
+          },
+        ]);
+        lineIndex++;
+      } else {
+        clearInterval(showNextLine);
+      }
+    }, 800);
+
+    // Cursor blink
+    const cursorBlink = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 500);
+
+    return () => {
+      clearInterval(showNextLine);
+      clearInterval(cursorBlink);
+    };
+  }, []);
+
   const typeCommand = (text, callback) => {
     setIsTyping(true);
     let index = 0;
@@ -48,16 +101,15 @@ const useCmd = () => {
       {
         type: "command",
         content: cmd,
-        // times: new Date().toLocaleTimeString(),
       },
     ]);
 
-    if (command === "github") {
-      window.open("https://github.com/SA1946");
-    }
+    if (command === "github") window.open("https://github.com/SA1946");
+    else if (command === "resume") handleResumeDown();
 
     // Add response
     const response =
+      // if we type help. commands[command] becomes commands['help']
       commands[command] ||
       `Command not found: ${command}. Type 'help' for available commands.`;
     setTimeout(() => {
@@ -66,7 +118,6 @@ const useCmd = () => {
         {
           type: "response",
           content: response,
-          // times: new Date().toLocaleTimeString(),
         },
       ]);
     }, 300);
@@ -74,7 +125,7 @@ const useCmd = () => {
     setCurrentCommand("");
   };
 
-  // Handle key press
+  // Handle keydown
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && currentCommand.trim()) {
       executeCommand(currentCommand);
@@ -111,8 +162,21 @@ const useCmd = () => {
     executeCommand,
     handleKeyDown,
     runDemo,
-    // type Command,
   };
+
+  // function handleResumeDown() { // before asked AI😆
+  //   const link = document.createElement("a");
+  //   link.href = "/CV_DALIN.pdf";
+  //   link.download = "SA.pdf";
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // }
+function handleResumeDown() {
+    const link = document.createElement("a");
+    Object.assign(link, { href: "/CV_DALIN.pdf", download: "SA.pdf" });
+    link.click();
+}
 };
 
 export default useCmd;

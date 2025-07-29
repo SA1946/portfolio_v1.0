@@ -95,4 +95,6 @@ export const commands = {
     🧾  resume.pdf`,
 
   clear: "CLEAR_TERMINAL",
+  github: "",
+  resume: "",
 };

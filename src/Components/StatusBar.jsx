@@ -1,7 +1,7 @@
 import { Github, Mail } from "lucide-react";
 const StatusBar = ({ onLine }) => {
   return (
-    <div className="mt-4 bg-gray-800 rounded-lg p-3 flex items-center justify-between text-sm">
+    <div className="mt-4 bg-gray-800 rounded-lg p-3 flex items-center justify-between sm:text-sm text-[12px]">
       <div className="flex items-center space-x-4">
         <div className="flex items-center space-x-2">
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -18,7 +18,7 @@ const StatusBar = ({ onLine }) => {
             <Github className="w-4 h-4" />
           </button>
 
-          <a href="mailto:saapril1177@gmail.com">
+          <a href="mailto:measreaksa0@gmail.com">
             <Mail className="w-4 h-4" />
           </a>
         </div>

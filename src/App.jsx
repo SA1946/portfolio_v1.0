@@ -17,7 +17,6 @@ function App() {
     terminalLines,
     setTerminalLines,
     showCursor,
-    setShowCursor,
     autoScrollRef,
     inputRef,
     executeCommand,
@@ -25,59 +24,7 @@ function App() {
     runDemo,
   } = useCmd();
 
-  // Initialize welcome
-  useEffect(() => {
-    const welcome = [
-      "Welcome to Synsa Creative Portfolio Terminal",
-      "Starting system...",
-      "Ready! 🚀",
-    ];
-
-    let lineIndex = 0;
-    // const showNextLine = () => { //using timeout
-    //   if (lineIndex < welcome.length) {
-    //     setTerminalLines((prev) => [
-    //       ...prev,
-    //       {
-    //         type: "system",
-    //         content: welcome[lineIndex],
-    //         times: new Date().toLocaleTimeString(),
-    //       },
-    //     ]);
-    //     lineIndex++;
-    //     setTimeout(showNextLine, 800);
-    //   }
-    // };
-    // setTimeout(showNextLine, 500);
-
-    const showNextLine = setInterval(() => {
-      //using setinterval
-      if (lineIndex < welcome.length) {
-        setTerminalLines((pre) => [
-          ...pre,
-          {
-            type: "system",
-            content: welcome[lineIndex],
-            times: new Date().toLocaleTimeString(),
-          },
-        ]);
-        lineIndex++;
-      } else {
-        clearInterval(showNextLine);
-      }
-    }, 800);
-
-    // Cursor blink
-    const cursorBlink = setInterval(() => {
-      setShowCursor((prev) => !prev);
-    }, 500);
-
-    return () => {
-      clearInterval(showNextLine);
-      clearInterval(cursorBlink);
-    };
-  }, []);
-
+  
   return (
     <div className="min-h-screen  bg-gray-900 text-green-400 font-mono">
       {/*  Navbar */}

@@ -3,11 +3,13 @@ import { Terminal, Play, Power } from "lucide-react";
 
 const Navbar = ({ onRunDemo, onClear }) => {
   return (
-    <nav className="bg-gray-800 fixed inset-x-0 border-b border-gray-700 px-4 py-2 flex items-center justify-between">
+    <nav className="bg-gray-800 fixed top-0 inset-x-0 border-b border-gray-700 px-4 py-2 flex items-center justify-between">
       <div className="flex items-center space-x-2">
         <img className="h-12 w-auto " src={logo} alt="synsaLogo" />
-        <Terminal className="w-4 h-4 ml-4" />
-        <span className="text-gray-300">cd Synsa@portfolio</span>
+        <Terminal className="sm:block  w-4 h-4 ml-4 hidden" />
+        <span className=" sm:block text-gray-300 hidden">
+          cd Synsa@portfolio
+        </span>
       </div>
       <div className="flex items-center space-x-2">
         <button
