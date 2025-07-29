@@ -1,0 +1,45 @@
+<svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    
+    @keyframes wave-animation {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes color-change {
+      0% { fill: #b32424b9; }
+      25% { fill: #d95c1eb9; }
+      50% { fill: #4c008296; }
+      75% { fill: #2be2c3ff; }
+      100% { fill: #24b383ff; }
+    }
+    
+    
+    .banner-background {
+      animation: color-change 15s linear infinite;
+    }
+    .wave {
+      animation: wave-animation 10s linear infinite;
+    }
+  </style>
+
+  <rect class="banner-background" width="800" height="160" fill="#B32424"/>
+
+  <text
+    x="50%"
+    y="50%"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif"
+    font-size="60"
+    font-weight="bold"
+    fill="#ffffffff">
+    Portfolio Website V1.0
+  </text>
+
+  <g class="wave" >
+    <path d="M0 160 C 200 130, 200 190, 400 160 C 600 130, 600 150, 800 160 C 1000 130, 1000 190, 1200 160 C 1400 130, 1400 190, 1600 180 L 1600 200 L 0 200 Z" fill="#0a24e6ff" fill-opacity="0.4"/>
+    <path d="M0 155 C 200 175, 200 135, 400 155 C 600 175, 600 200, 800 155 C 1000 175, 1000 135, 1200 155 C 1400 175, 1400 135, 1600 155 L 1600 200 L 0 200 Z" fill="#00b4fbff" fill-opacity="0.6"/>
+    <path d="M0 150 C 200 100, 200 160, 400 150 C 600 140, 600 100, 800 150 C 1000 140, 1000 160, 1200 150 C 1400 140, 1400 160, 1600 150 L 1600 200 L 0 200 Z" fill="#5dc4d6ff" fill-opacity="0.8"/>
+    
+  </g>
+</svg>
