@@ -25,7 +25,6 @@ const useCmd = () => {
       "Ready! 🚀",
     ];
 
-    let lineIndex = 0;
     // const showNextLine = () => { //using timeout
     //   if (lineIndex < welcome.length) {
     //     setTerminalLines((prev) => [
@@ -42,6 +41,7 @@ const useCmd = () => {
     // };
     // setTimeout(showNextLine, 500);
 
+    let lineIndex = 0;
     const showNextLine = setInterval(() => {
       //using setinterval
       if (lineIndex < welcome.length) {
@@ -92,6 +92,14 @@ const useCmd = () => {
       setTerminalLines([]);
       setCurrentCommand("");
       return;
+    } else if (command === "github") {
+      window.open("https://github.com/SA1946");
+
+      setTerminalLines([]);
+    } else if (command === "resume") {
+      handleResumeDown();
+
+      setTerminalLines([]);
     }
     console.log("Executing command:", command);
 
@@ -103,9 +111,6 @@ const useCmd = () => {
         content: cmd,
       },
     ]);
-
-    if (command === "github") window.open("https://github.com/SA1946");
-    else if (command === "resume") handleResumeDown();
 
     // Add response
     const response =
@@ -164,7 +169,7 @@ const useCmd = () => {
     runDemo,
   };
 
-  // function handleResumeDown() { // before asked AI😆
+  // function handleResumeDown() {
   //   const link = document.createElement("a");
   //   link.href = "/CV_DALIN.pdf";
   //   link.download = "SA.pdf";
@@ -172,11 +177,14 @@ const useCmd = () => {
   //   link.click();
   //   document.body.removeChild(link);
   // }
-function handleResumeDown() {
+  function handleResumeDown() {
     const link = document.createElement("a");
-    Object.assign(link, { href: "/CV_DALIN.pdf", download: "SA.pdf" });
+    Object.assign(link, {
+      href: "/CV_Measreaksa.pdf",
+      download: "CV_Measreaksa.pdf",
+    });
     link.click();
-}
+  }
 };
 
 export default useCmd;
