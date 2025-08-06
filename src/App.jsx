@@ -25,11 +25,11 @@ function App() {
   } = useCmd();
 
   return (
-    <div className="min-h-screen  bg-gray-900 text-green-400 font-mono">
+    <div className="min-h-screen min-w-screen-lg bg-gray-900 text-green-400 font-mono">
       {/*  Navbar */}
       <Navbar onRunDemo={runDemo} onClear={executeCommand} />
       {/* Terminal  */}
-      <div className=" min-h-screen pt-16  w-full">
+      <div className=" w-full">
         <div className="max-w-4xl mx-auto">
           <div className="mb-2 text-green-300 ">
             {/* ASCII  */}
@@ -41,7 +41,7 @@ function App() {
 
           <div
             ref={autoScrollRef}
-            className=" IOcmd  bg-black rounded-lg p-4  border border-gray-700  max-h-80 overflow-y-scroll"
+            className=" IOcmd bg-black rounded-lg p-4 border border-gray-700 md:max-h-80 md:text-[16px] sm:text-[12px] max-h-64 text-[10px] overflow-y-scroll "
           >
             {/* Terminal Output */}
             <OutputCmd onOutput={terminalLines} />

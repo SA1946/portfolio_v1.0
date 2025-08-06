@@ -12,8 +12,11 @@ const useCmd = () => {
   // auto_scroll and focus on input in terminal
   useEffect(() => {
     if (autoScrollRef.current && inputRef.current) {
-      inputRef.current.focus();
       autoScrollRef.current.scrollTop = autoScrollRef.current.scrollHeight;
+      if (inputRef.current && window.innerWidth >= 640) {
+        // focus only in large screen
+        inputRef.current.focus();
+      }
     }
   }, [terminalLines]);
 
@@ -88,19 +91,16 @@ const useCmd = () => {
   // Handle command execution
   const executeCommand = (cmd) => {
     const command = cmd.toLowerCase().trim();
-    if (command === "clear") {
-      setTerminalLines([]);
-      setCurrentCommand("");
-      return;
-    } else if (command === "github") {
-      window.open("https://github.com/SA1946");
-
-      setTerminalLines([]);
-    } else if (command === "resume") {
-      handleResumeDown();
-
-      setTerminalLines([]);
-    }
+if (command === "clear") {
+  setTerminalLines([]);
+  setCurrentCommand("");
+  return;
+} else if (command === "github") {
+  window.open("https://github.com/SA1946");
+} else if (command === "resume") {
+  handleResumeDown();
+}
+// Let the rest of the function handle adding to terminal history
     console.log("Executing command:", command);
 
     // Add command to history
@@ -141,6 +141,7 @@ const useCmd = () => {
   const runDemo = () => {
     const demoCommands = ["whoami", "about", "projects", "skills", "contact"];
     let index = 0;
+
     autoScrollRef.current.disable = true;
 
     function runNext() {

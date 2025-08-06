@@ -13,7 +13,7 @@ export const ACII = () => {
 };
 
 export const commands = {
-  help: `Available commands:
+  help: ` ▶️ Available commands:
     about     - Learn about me
     projects  - View my projects  
     skills    - Check my skills
@@ -27,13 +27,12 @@ export const commands = {
 
     Recently completed:
     ✓ Modern Tech Store (React + React Router + Tailwind)
-    ✓ Learning React fundamentals
     ✓ Building responsive SPAs
+    ✓ Focused on performance and user experience
+    ✓ Always learning and improving my skills
     
-    Currently exploring:
     → Advanced React patterns
-    → Creative web animations
-    → Portfolio development`,
+    → Portfolio old-school terminal.`,
 
   projects: `📁 My Projects:
     
@@ -53,7 +52,9 @@ export const commands = {
         ├── 🌤️ Weather dashboard
         ├── 🌍 API integration
         ├── 📍 Location-based
-        └── 🔗 Live Demo | Code`,
+        └── 🔗 Live Demo | Code
+        👉Type the number of the project for the open :
+        `,
 
   skills: `🚀 Technical Skills:
     
@@ -77,13 +78,13 @@ export const commands = {
     
     Social:
     🐙 GitHub: https://github.com/SA1946
-    💼 LinkedIn: linkedin.com/in/SA1946
+    💼 LinkedIn: linkedin.com/in/reaksa-meas
     
     Status: Available for opportunities!`,
 
   whoami: `Synsa@portfolio:> whoami
     Frontend Developer
-    React Enthusiast
+    currentFocus on "Dynamic UI Components",
     Problem Solver
     Coffee Lover ☕`,
 
@@ -92,10 +93,10 @@ export const commands = {
     🧾  projects/
     🧾  skills.json
     🧾  contact.md
+    🧾  github.com
     🧾  resume.pdf`,
 
-  github: "",
-  resume: "",
-  clear: "",
-
+  github: "Let's check the new tab opened with GitHub profile",
+  resume: "CV_Measreaksa.pdf have been downloaded ",
+  clear: "Clear terminal",
 };

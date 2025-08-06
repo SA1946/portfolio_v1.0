@@ -6,7 +6,7 @@ const AnimaACII = () => {
   const { displayText, isComplet } = useTypeWriter(lines, 1);
 
   return (
-    <pre className="md:text-sm md:leading-tight text-center sm:text-[10px] text-[6px] leading-none   ">
+    <pre className="md:text-sm md:leading-tight sm:leading-tight text-center sm:text-[10px] text-[5px]  ">
       {displayText}
       {<span className="animate-ping">|</span>}
     </pre>

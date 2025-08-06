@@ -3,7 +3,7 @@ import { Terminal, Play, Power } from "lucide-react";
 
 const Navbar = ({ onRunDemo, onClear }) => {
   return (
-    <nav className="bg-gray-800 fixed top-0 inset-x-0 border-b border-gray-700 px-4 py-2 flex items-center justify-between">
+    <nav className="bg-gray-800  border-b border-gray-700 px-4 py-2 flex items-center justify-between">
       <div className="flex items-center space-x-2">
         <img className="h-12 w-auto " src={logo} alt="synsaLogo" />
         <Terminal className="sm:block  w-4 h-4 ml-4 hidden" />
@@ -11,17 +11,17 @@ const Navbar = ({ onRunDemo, onClear }) => {
           cd Synsa@portfolio
         </span>
       </div>
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-2 md:space-x-4 ">
         <button
           onClick={onRunDemo}
-          className="flex items-center space-x-1 px-3 py-1 bg-green-600 text-white rounded text-sm hover:bg-green-700 transition-colors"
+          className="flex items-center space-x-1 px-3 py-1 bg-green-600 text-white rounded sm:text-sm text-[11px] hover:bg-green-700 transition-colors"
         >
           <Play className="w-3 h-3" />
           <span>Demo</span>
         </button>
         <button
           onClick={() => onClear("clear")}
-          className="flex items-center space-x-1 px-3 py-1 bg-yellow-600 text-white rounded text-sm hover:bg-yellow-700 transition-colors"
+          className="flex items-center space-x-1   px-3 py-1 bg-yellow-600 text-white rounded sm:text-sm text-[11px] hover:bg-yellow-700 transition-colors"
         >
           <Power className="w-3 h-3" />
           <span>Clear</span>

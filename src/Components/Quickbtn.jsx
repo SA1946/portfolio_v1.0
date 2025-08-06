@@ -5,7 +5,7 @@ const Quickbtn = ({ onHandleBtn }) => {
     <div className="mb-6 ">
       <p className="text-gray-400 text-center mb-3"> Quick button</p>
 
-      <div className="flex flex-row sm:gap-4 gap-1 justify-center items-center mb-3">
+      <div className="flex flex-row md:text-[16px] sm:text-[14px] text-[10px] sm:gap-4 gap-1 justify-center items-center mb-3">
         {quickbtn.map((cmd) => {
           return (
             <button
